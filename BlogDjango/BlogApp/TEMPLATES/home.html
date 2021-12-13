@@ -10,7 +10,7 @@
     <h1>Posts</h1>
 
     {% for Post in object_list %}
-        <a href="={% url 'verPost' Post.pk %}">{{Post.titulo}}
+        <a href="{% url 'verPost' Post.pk %}">{{Post.titulo}}
     <br>    
         </a> - {{Post.autor.first_name}}  {{Post.autor.last_name}}
     </br>
