@@ -11,6 +11,6 @@ class HomeView(ListView):
     model = Post
     template_name = 'home.html'
 
-class postDetailView(DetailView):
+class PostDetailView(DetailView):
     model = Post
     template_name = 'viewPost.html'

@@ -10,9 +10,9 @@
     {% extends 'base.html' %}
 
     {% block content %}
-    <h1>{{Post.titulo}}</h1>
-    <small>Por: {{Post.autor.first_name}}  {{Post.autor.last_name}}</small>
-    {{ Post.cuerpoPost }}
+    <h1>{{post.titulo}}</h1>
+    <small>Por: {{post.autor.first_name}}  {{post.autor.last_name}}</small>
+    {{ post.cuerpoPost }}
 
     <a href="{% url 'home' %}" >Back</a>
     {% endblock %}

@@ -13,10 +13,10 @@
 
     <h1>Posts</h1>
 
-    {% for Post in object_list %}
-        <a href="{% url 'verPost' Post.pk %}">{{Post.titulo}}
+    {% for post in object_list %}
+        <a href="{% url 'verPost' post.pk %}">{{post.titulo}}
     <br>    
-        </a> - {{Post.autor.first_name}}  {{Post.autor.last_name}}
+        </a> - {{post.autor.first_name}}  {{post.autor.last_name}}
     </br>
     {% endfor %}
     
