@@ -6,18 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-{% extends 'base.html' %}
 <body>
-
+    {% extends 'base.html' %}
 
     {% block content %}
     <h1>{{Post.titulo}}</h1>
     <small>Por: {{Post.autor.first_name}}  {{Post.autor.last_name}}</small>
     {{ Post.cuerpoPost }}
-</br>
-    <a href="{% url 'home' %}" >Back</a>
 
+    <a href="{% url 'home' %}" >Back</a>
+    {% endblock %}
 </body>
 
-{% endblock %}
 </html>
