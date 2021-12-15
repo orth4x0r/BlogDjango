@@ -2,6 +2,7 @@ from typing import List
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
 from .models import Post
+from .forms import PostForm
 
 # Create your views here
 #def home(request):
@@ -17,5 +18,6 @@ class PostDetailView(DetailView):
 
 class AddPostView(CreateView):
     model = Post
+    form_class = PostForm
     template_name = 'addPost.html'
-    fields = '__all__'
+    #fields = '__all__'
