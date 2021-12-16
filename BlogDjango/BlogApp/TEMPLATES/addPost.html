@@ -20,6 +20,10 @@
 
     </form>
     </div>
+    <script>
+        var name = "{{user.id}}";
+        document.getElementById("usernameCheck").value = name;
+    </script>
     {% else %}
     <h1>Logueate y despues vemos PX</h1>
     <a href="{% url 'home' %}" class="btn btn-secondary" >Back</a>

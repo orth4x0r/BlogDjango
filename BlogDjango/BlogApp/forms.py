@@ -9,7 +9,8 @@ class PostForm(forms.ModelForm):
         widgets = {
             'titulo': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Sin titulo'}),
             'titulo_tag':  forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Sin tag'}),
-            'autor':  forms.Select(attrs={'class': 'form-control'}),
+            'autor':  forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id':'usernameCheck', 'type':'hidden'}),
+#            'autor':  forms.Select(attrs={'class': 'form-control'}),
             'cuerpoPost':  forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Sin texto'}),
 
         }
