@@ -12,13 +12,14 @@
 
     {% block content %}
 
-    <h1>Posts</h1>
+        <h1>Posts</h1>
 
-    {% for post in object_list %}
-        <a href="{% url 'verPost' post.pk %}">{{post.titulo}}
-    <br>    
-        </a> - {{post.autor.first_name}}  {{post.autor.last_name}}
-    </br>
+        {% for post in object_list %}
+            <a href="{% url 'verPost' post.pk %}">{{post.titulo}}
+        <br>    
+            </a> - {{post.autor.first_name}}  {{post.autor.last_name}} -- {{ post.fechaPost }}
+        </br>
+        
     {% endfor %}
     
     {% endblock %}

@@ -5,26 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}  Editar Posts  {% endblock %}</title>
+    <title>{% block title %}  Logueate!  {% endblock %}</title>
 </head>
 <body>
     {% block content %}
-    {% if user.is_authenticated %}
-    <h1> Agregar posts !!!! </h1>
+    <h1> Login baby wooooooo !!!! </h1>
     <div class="form-group">
         <form method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-            <button class="btn btn-primary">POST!</button>
+            <button class="btn btn-primary">LOGIN!</button>
 
     </form>
     </div>
-    {% else %}
-
-    <h1> Raja de aca </h1>
-    <a href="{% url 'home' %}" class="btn btn-secondary" >Back</a>
-
-    {% endif %}
     {% endblock %}
 </body>
 </html>

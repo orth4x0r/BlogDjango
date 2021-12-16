@@ -12,6 +12,7 @@ from .forms import PostForm, EditForm
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'
+    ordering = ['-fechaPost']
     
 class PostDetailView(DetailView):
     model = Post

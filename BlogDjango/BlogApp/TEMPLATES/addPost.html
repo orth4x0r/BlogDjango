@@ -8,7 +8,9 @@
     <title>{% block title %}  Agregar Posts  {% endblock %}</title>
 </head>
 <body>
+    
     {% block content %}
+    {% if user.is_authenticated %}
     <h1> Agregar posts !!!! </h1>
     <div class="form-group">
         <form method="POST">
@@ -18,6 +20,11 @@
 
     </form>
     </div>
+    {% else %}
+    <h1>Logueate y despues vemos PX</h1>
+    <a href="{% url 'home' %}" class="btn btn-secondary" >Back</a>
+
+    {% endif%}
     {% endblock %}
 </body>
 </html>
