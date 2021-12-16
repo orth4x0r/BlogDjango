@@ -14,25 +14,27 @@
     <h1>{{post.titulo}}</h1>
     <div class="container-fluid">
         <div>
-            <small>Por: {{post.autor.first_name}}  {{post.autor.last_name}}</small> </br>
+            <small>Por:
+                <br>
+                </br>
+                    {{post.autor.first_name}}  {{post.autor.last_name}}</small> </br>
         </div>
         <div>
              {{ post.fechaPost }}
         </div>
-        <div {
-            width: 600px;
-            word-break: break-all;
-            white-space: normal;
-          }>
-                {{ post.cuerpoPost }}
-
+        <div class='text-wrap'>
+          <p class='text-justify'>
+                {{ post.cuerpoPost|safe }}
+            </p>
         </div>
     </div>
 </br>
     <a href="{% url 'home' %}" class="btn btn-secondary" >Back</a>
     {% if user.is_authenticated %}
+        {% if user.id == post.autor.id %}
     <a href="{% url 'updatePost' post.pk %}" class="btn btn-primary" >Editar Post! </a>
     <a href="{% url 'deletePost' post.pk %}" class="btn btn-danger" >Borrar Post! </a>
+    {% endif %}
     {% endif %}
 </body>
 {% endblock %}

@@ -27,6 +27,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'logout'%}">Des-Logueate!</a>
              </li>
+             <a class="navbar-text" >Estas logueadx como: {{user.username}}</a>
             {% else %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'register'%}">Registrate</a>
@@ -34,6 +35,8 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'login'%}">Logueate!</a>
               </li>
+              <a class="navbar-text" >No estas logueado</a>
+
             {% endif %}
            </ul>
         </div>
