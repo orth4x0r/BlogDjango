@@ -1,3 +1,4 @@
+Entrega1+Fritzler
 BlogDjango - Ilan Fritzler
 
 funciones:
