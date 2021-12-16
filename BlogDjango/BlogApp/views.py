@@ -12,7 +12,7 @@ from .forms import PostForm, EditForm
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'
-
+    
 class PostDetailView(DetailView):
     model = Post
     template_name = 'viewPost.html'
