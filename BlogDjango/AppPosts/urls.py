@@ -1,10 +1,9 @@
-from django.template.context import RequestContext
 from django.urls import path
-from .views import Intro
+from AppPosts import views
 
 urlpatterns = [
  
-    path('nosotrxs/', Intro.as_view(), name='nosotrxs'),
+    path('nosotrxs', views.Intro),
     #path('posts/', views.blogposts()),
     #path('ingresa/', views.ingresar()),
 ]
