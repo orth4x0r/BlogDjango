@@ -6,3 +6,6 @@ from datetime import datetime
 def Intro(request):
  
     return render(request, 'AppPosts/nosotrxs.html')
+
+def BlogPosts(request):
+    return render(request, 'AppPosts/tus_posts.html')
