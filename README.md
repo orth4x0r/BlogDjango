@@ -1,5 +1,5 @@
-Entrega1+Fritzler
-BlogDjango - Ilan Fritzler
+Entrega1+Fritzler+Duran
+BlogDjango - Ilan Fritzler, Gabriela Duran
 
 funciones:
 
