@@ -4,6 +4,6 @@ from AppPosts import views
 urlpatterns = [
  
     path('nosotrxs', views.Intro),
-    path('posts/', views.blogposts),
+    path('posts/', views.BlogPosts),
     #path('ingresa/', views.ingresar()),
 ]
