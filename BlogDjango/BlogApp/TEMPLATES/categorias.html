@@ -11,7 +11,7 @@
 
 
     {% block content %}
-    {%if category_posts %}
+    {% if category_posts %}
         <h1>{{cats}}</h1>
 
         {% for post in category_posts %}
@@ -21,12 +21,10 @@
         <br>    
             </a> - {{post.autor.first_name}}  {{post.autor.last_name}} -- {{ post.fechaPost }}
         </br>
-        
-
         {% endfor %}
-    {% else %}
-    <h2> 404 Pag no existe </h2>
+        <h2> 404 Pag no existe </h2>
     {% endif %}
+
     {% endblock %}
 </body>
 </html>

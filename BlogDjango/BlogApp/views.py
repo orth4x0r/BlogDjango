@@ -1,5 +1,4 @@
 from typing import List
-from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.urls.base import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -14,7 +13,14 @@ class HomeView(ListView):
     model = Post
     template_name = 'home.html'
     ordering = ['-fechaPost']
-    
+    cats=Categoria.objects.all()
+
+    def get_context_data(self, *args, **kwargs):
+        cat_menu = Categoria.objects.all()
+        context = super(HomeView, self).get_context_data(*args, **kwargs)
+        context["cat_menu"] = cat_menu
+        return context
+
 class PostDetailView(DetailView):
     model = Post
     template_name = 'viewPost.html'
@@ -43,5 +49,5 @@ class DeletePostView(DeleteView):
     success_url = reverse_lazy('home')
 
 def VerCategoria(request, cats): 
-    category_posts = Post.objects.filter(categoria=cats)
-    return render(request, 'categorias.html', {'cats':cats.title(), 'category_posts':category_posts})
+    category_posts = Post.objects.filter(categoria_post=cats.replace)
+    return render(request, 'categorias.html', {'cats':cats.replace, 'category_posts':category_posts})

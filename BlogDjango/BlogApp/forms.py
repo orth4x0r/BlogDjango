@@ -1,6 +1,6 @@
 from django import forms
 from .models import Post, Categoria
-cats= Categoria.objects.all().values_lista('nombre', 'nombre')
+cats= Categoria.objects.all().values_list('nombre', 'nombre')
 cats_lista =[]
 
 for item in cats:
@@ -9,13 +9,13 @@ for item in cats:
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('titulo', 'titulo_tag', 'autor', 'categoria', 'cuerpoPost')
+        fields = ('titulo', 'titulo_tag', 'autor', 'categoria_post', 'cuerpoPost')
 
         widgets = {
             'titulo': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Sin titulo'}),
             'titulo_tag':  forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Sin tag'}),
             'autor':  forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id':'usernameCheck', 'type':'hidden'}),
-            'categoria':  forms.Select(choices=cats_lista,attrs='class': 'form-control'}),
+            'categoria_post':  forms.Select(choices=cats_lista,attrs={'class': 'form-control'}),
             'cuerpoPost':  forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Sin texto'}),
 
         }
