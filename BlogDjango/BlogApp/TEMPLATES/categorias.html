@@ -22,6 +22,8 @@
             </a> - {{post.autor.first_name}}  {{post.autor.last_name}} -- {{ post.fechaPost }}
         </br>
         {% endfor %}
+        {% endfor %}
+        {% else %}
         <h2> 404 Pag no existe </h2>
     {% endif %}
 

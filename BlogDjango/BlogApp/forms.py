@@ -15,7 +15,7 @@ class PostForm(forms.ModelForm):
             'titulo': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Sin titulo'}),
             'titulo_tag':  forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Sin tag'}),
             'autor':  forms.TextInput(attrs={'class': 'form-control', 'value': '', 'id':'usernameCheck', 'type':'hidden'}),
-            'categoria_post':  forms.Select(choices=cats_lista,attrs={'class': 'form-control'}),
+            'categoria_post':  forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Sin tag'}),
             'cuerpoPost':  forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Sin texto'}),
 
         }
