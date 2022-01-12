@@ -2,6 +2,7 @@
 
 <html lang="en">
     {% extends 'base.html' %}
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +25,44 @@
         </div>
         <div class='text-wrap'>
           <p class='text-justify'>
+              {% if post.header_image %}
+              <img src= "{{ post.header_image.url }}">
+              {% endif %}
+              <br/><br/>
                 {{ post.cuerpoPost|safe }}
+                <br/>
+                <div class="card mb-3">
+                    <div class="row g-0">
+                      <div class="col-md-2">
+                        {% if post.autor.profile.profile_pic.url %}
+                            <img src="{{ post.autor.profile.profile_pic.url }}" class="img-fluid rounded-start" alt="...">
+                        {% else %}
+                            <img src="{% static 'BlogDjango/images/default.jpg'%}" class="img-fluid rounded-start" alt="...">
+                        {% endif %}
+                    </div>
+                      <div class="col-md-10">
+                        <div class="card-body">
+                          <h5 class="card-title">{{post.autor.first_name}}  {{post.autor.last_name}}</h5>
+                          <p class="card-text">{{ post.autor.profile.bio }}</p>
+                          <p class="card-text"><small class="text-muted">
+                              {% if post.autor.profile.fb_url %}
+                                <a href="{{post.autor.profile.fb_url}}">Facebook</a></small></p> ||
+                            {% endif %}
+                            {% if post.autor.profile.ig_url %}                                
+                                <a href="{{post.autor.profile.ig_url}}">Instagram</a></small></p> ||
+                            {% endif %}
+                            {% if post.autor.profile.linkedin_url %}  
+                                <a href="{{post.autor.profile.linkedin_url}}">LinkedIn</a></small></p> ||
+                            {% endif%}
+                            {% if post.autor.profile.twitter_url %} 
+                                <a href="{{post.autor.profile.twitter_url}}">Twitter</a></small></p> ||
+                            {% endif %}
+                            <p class="card-text"><small class="text-muted"></small></p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </p>
         </div>
     </div>
