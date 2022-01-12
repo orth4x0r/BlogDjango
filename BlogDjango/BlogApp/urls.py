@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 # from . import views
-from .views import AddPostView, HomeView, PostDetailView, UpdatePostView, DeletePostView, AddCategoryView, VerCategoria
+from .views import AboutUsView, AddPostView, HomeView, PostDetailView, UpdatePostView, DeletePostView, AddCategoryView, VerCategoria
 
 urlpatterns = [
     path('', HomeView.as_view(), name ='home'),
@@ -25,5 +25,6 @@ urlpatterns = [
     path('article/edit/<int:pk>', UpdatePostView.as_view(), name='updatePost'),
     path('article/delet/<int:pk>', DeletePostView.as_view(), name='deletePost'),
     path('categoria/<str:cats>', VerCategoria, name='categoria_post'),
+    path('about_us/', AboutUsView, name='aboutUs'),
     
 ]

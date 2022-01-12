@@ -51,3 +51,6 @@ class DeletePostView(DeleteView):
 def VerCategoria(request, cats): 
     category_posts = Post.objects.filter(categoria_post=cats.replace)
     return render(request, 'categorias.html', {'cats':cats.replace, 'category_posts':category_posts})
+
+def AboutUsView(request):
+    return render(request, 'about.html', {})
