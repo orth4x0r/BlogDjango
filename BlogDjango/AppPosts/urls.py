@@ -3,7 +3,8 @@ from AppPosts import views
 
 urlpatterns = [
  
-    path('nosotrxs', views.Intro),
-    path('posts/', views.BlogPosts),
-    #path('ingresa/', views.ingresar()),
+    path('nosotrxs', views.nosotrxs, name="Nosotrxs"),
+    path('mis-posts', views.misPosts, name="Mis-posts"),
+    path('bienvenida', views.bienvenida, name="Bienvenida"),
+    path('nuevo-post', views.nuevoPost, name="Nuevo-post"),
 ]
