@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}  Agregar Categoria  {% endblock %}</title>
+</head>
+<body>
+    
+    {% block content %}
+    {% if user.is_authenticated %}
+    <h1> Agregar Categoria !!!! </h1>
+    <div class="form-group">
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-primary">Agregar categoria!!</button>
+
+    </form>
+    </div>
+    <script>
+        var name = "{{user.id}}";
+        document.getElementById("usernameCheck").value = name;
+    </script>
+    {% else %}
+    <h1>Logueate y despues vemos PX</h1>
+    <a href="{% url 'home' %}" class="btn btn-secondary" >Back</a>
+
+    {% endif%}
+    {% endblock %}
+</body>
+</html>

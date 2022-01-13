@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    {% extends 'base.html' %}
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}  Sobre nosotres  {% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<br/><br/><br/><br/>
+<img src="{% static 'BlogDjango/images/ilanpicrew.png'%}" alt="..." width="250" height="250">
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h2>Soy Ilan Fritzler</h2>
+        <h6>Elle/Ella</h6>
+      <p class="card-text">Tengo 24 años y soy de Beccar, Gran Buenos Aires</p>
+      <br/>
+      <p class="card-text">Hice el CRUD, Perfiles, agregue CKEditor y todo el sistema de log-in/logout, todo, basicamente</p>
+    </div>
+  </div>
+  <br/><br/><br/><br/>
+  <div class="content" style="padding-right: 50px;"> 
+
+    <img src="{% static 'BlogDjango/images/default.jpg'%}" alt="..." width="250" height="250">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h2>Soy Gabriela Durán Muñoz</h2>
+            <h6>Ella</h6>
+          <p class="card-text">No se que hiciste Gabriela, pone tus datos aca</p>
+        </div>
+      </div>
+</div>
+
+
+  
+
+{% endblock %}
+</body>
+</html>

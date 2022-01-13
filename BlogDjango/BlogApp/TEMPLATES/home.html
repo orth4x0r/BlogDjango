@@ -17,10 +17,10 @@
         {% for post in object_list %}
             <a href="{% url 'verPost' post.pk %}">{{post.titulo}}
         <br>    
-            </a> - {{post.autor.first_name}}  {{post.autor.last_name}} -- {{ post.fechaPost }}
+            </a> - {{post.autor.first_name}}  {{post.autor.last_name}} -- {{ post.fechaPost }} -- {{ post.categoria_post}}
         </br>
         
-    {% endfor %}
+        {% endfor %}
     
     {% endblock %}
 </body>
