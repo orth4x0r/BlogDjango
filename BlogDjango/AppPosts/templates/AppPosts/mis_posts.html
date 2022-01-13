@@ -1,6 +1,19 @@
 {% extends "AppPosts/base.html" %}
 {% load static %}
 {% block contenido %}
-    <title>Mis Posts</title>
-    <h1 class="text-white font-weight-bold">Mis Posts</h1>
+    <title>Posts</title>
+    <h1 class="text-white font-weight-bold">Lista de Posts</h1>
+    <ul>
+    {% for post in listaPosts %}
+    <a href="{% url 'Mis-posts' %}">
+        <br>  
+        <li>{{ post.titulo }}, {{ post.fecha }}</li>
+        </br>
+    </a>
+    {% empty %}
+        <li>Aún no hay posts</li>
+
+    {% endfor %}
+    </ul>
+
 {% endblock %}

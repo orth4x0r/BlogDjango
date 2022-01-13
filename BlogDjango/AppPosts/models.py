@@ -1,4 +1,6 @@
 from django.db import models
+from datetime import date
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -12,11 +14,12 @@ class User(models.Model):
 class Post(models.Model):
     imagen = models.ImageField()
     titulo = models.CharField(max_length=50)
-    fecha = models.DateField()
+    fecha = models.DateField(default=date.today)
     texto = models.CharField(max_length=1000)
+    autor = models.CharField(max_length=50)
 
     def __str__(self):
-        return f"imagen: {self.imagen}, titulo: {self.titulo}, fecha: {self.fecha}"
+        return f"titulo: {self.titulo}, fecha: {self.fecha}, autor: {self.autor}"
 
 class Intro(models.Model):
     bienvenida = models.CharField(max_length=50)
