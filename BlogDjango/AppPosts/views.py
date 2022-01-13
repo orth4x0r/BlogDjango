@@ -22,7 +22,7 @@ def nuevoPost(request):
 
         if nuevoPost.is_valid():
             informacion = nuevoPost.cleaned_data
-            newPost = Post(titulo=informacion["titulo"],fecha=informacion["fecha"],texto=informacion["texto"])
+            newPost = Post(titulo=informacion["titulo"],fecha=informacion["fecha"],texto=informacion["texto"],imagen=informacion["imagen"])
             newPost.save()
 
         return render(request, 'AppPosts/mis_posts.html')
