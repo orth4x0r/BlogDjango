@@ -1,0 +1,21 @@
+{% extends "AppPosts/base.html" %}
+{% load static %}
+{% block contenido %}
+    <title>Nuevo Post</title>
+    <h1 class="text-white font-weight-bold">Nuevo Posts</h1>
+
+    {% if nuevoPost.errors %}
+    <p style=color:darkred>ERROR AL SUBIR EL POST</p>
+    {% endif %}
+    <form action="/members-page/nuevo-post" method="POST">{% csrf_token %}
+        <table>
+            {{ nuevoPost.as_table }}
+        </table>
+        <input type="submit" value="Subir Post">
+    </form>
+
+    <script>
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML = dt.toLocaleString();
+        </script>
+{% endblock %}
